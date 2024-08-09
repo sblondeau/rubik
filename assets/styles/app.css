@@ -1,3 +1,8 @@
 body {
-    background-color: skyblue;
+    padding: 1rem;
+}
+
+button {
+    padding-inline: 0.3rem;
+    padding-block: 0rem;
 }

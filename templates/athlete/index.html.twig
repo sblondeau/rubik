@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<h1>Sorter</h1>
+<twig:Table :entity="entity" :headers="headers" :searchFields="searchFields" />
+{% endblock %}

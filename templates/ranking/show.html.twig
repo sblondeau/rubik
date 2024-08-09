@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ranking{% endblock %}
+
+{% block body %}
+    <h1>Ranking</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ ranking.id }}</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>{{ ranking.country }}</td>
+            </tr>
+            <tr>
+                <th>Gold</th>
+                <td>{{ ranking.gold }}</td>
+            </tr>
+            <tr>
+                <th>Silver</th>
+                <td>{{ ranking.silver }}</td>
+            </tr>
+            <tr>
+                <th>Bronze</th>
+                <td>{{ ranking.bronze }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_ranking_index') }}">back to list</a>
+
+    <a href="{{ path('app_ranking_edit', {'id': ranking.id}) }}">edit</a>
+
+    {{ include('ranking/_delete_form.html.twig') }}
+{% endblock %}
