@@ -1,0 +1,9 @@
+<div{{attributes}} class="face face-{{ face.position.value ?? '' }}">
+	{% for y in -1 .. 1 %}
+		{% for x in -1 .. 1 %}
+			{% for tile in face.tiles|filter(face => face.x == x and face.y == y) %}
+				<twig:Tile :tile="tile"/>
+			{% endfor %}
+		{% endfor %}
+	{% endfor %}
+</div>

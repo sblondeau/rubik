@@ -1,0 +1,64 @@
+<div{{attributes}} class="scene">
+	<div class="cube">
+		{% for face in cube.faces %}
+			<twig:Face face="{{face}}"/>
+		{% endfor %}
+		<button data-action="live#action" data-live-action-param="turn" data-live-direction-param="frontToRight">
+			{{ ux_icon('front-to-right', {class: 'icon'}) }}
+		</button>
+		<button data-action="live#action" data-live-action-param="turn" data-live-direction-param="frontToLeft">
+			{{ ux_icon('front-to-left', {class: 'icon'}) }}
+		</button>
+		<button data-action="live#action" data-live-action-param="turn" data-live-direction-param="topToRight">
+			{{ ux_icon('top-to-right', {class: 'icon'}) }}
+		</button>
+		<button data-action="live#action" data-live-action-param="turn" data-live-direction-param="topToLeft">
+			{{ ux_icon('top-to-left', {class: 'icon'}) }}
+		</button>
+		<button data-action="live#action" data-live-action-param="turn" data-live-direction-param="bottomToRight">
+			{{ ux_icon('bottom-to-right', {class: 'icon'}) }}
+		</button>
+		<button data-action="live#action" data-live-action-param="turn" data-live-direction-param="bottomToLeft">
+			{{ ux_icon('bottom-to-left', {class: 'icon'}) }}
+		</button>
+		<button data-action="live#action" data-live-action-param="turn" data-live-direction-param="rightToTop">
+			{{ ux_icon('right-to-top', {class: 'icon'}) }}
+		</button>
+		<button data-action="live#action" data-live-action-param="turn" data-live-direction-param="rightToBottom">
+			{{ ux_icon('right-to-bottom', {class: 'icon'}) }}
+		</button>
+		<button data-action="live#action" data-live-action-param="turn" data-live-direction-param="leftToTop">
+			{{ ux_icon('left-to-top', {class: 'icon'}) }}
+		</button>
+		<button data-action="live#action" data-live-action-param="turn" data-live-direction-param="leftToBottom">
+			{{ ux_icon('left-to-bottom', {class: 'icon'}) }}
+		</button>
+	</div>
+
+
+	<div class="buttons">
+		<button class="rotate" data-loading="action(rotateX)|addClass(animX)" data-action="live#action" data-live-action-param="rotateX">
+			{{ ux_icon('mingcute:rotate-y-line', {class: 'icon'} ) }}
+		</button>
+		<button class="rotate" data-loading="action(rotateXInverse)|addClass(animXInv)" data-action="live#action" data-live-action-param="rotateXInverse">
+			{{ ux_icon('mingcute:rotate-y-line', {class: 'icon reverse'}) }}
+		</button>
+		<button class="rotate" data-loading="action(rotateY)|addClass(animY)" data-action="live#action" data-live-action-param="rotateY">
+			{{ ux_icon('mingcute:rotate-x-line', {class: 'icon reverse-h'} ) }}
+		</button>
+		<button class="rotate" data-loading="action(rotateYInverse)|addClass(animYInv)" data-action="live#action" data-live-action-param="rotateYInverse">
+			{{ ux_icon('mingcute:rotate-x-line', {class: 'icon'} ) }}
+		</button>
+		<button class="rotate" data-loading="action(rotateZ)|addClass(animZ)" data-action="live#action" data-live-action-param="rotateZ">
+			{{ ux_icon('fluent-mdl2:rotate-90-clockwise', {class: 'icon'}) }}
+		</button>
+		<button class="rotate" data-loading="action(rotateZInverse)|addClass(animZInv)" data-action="live#action" data-live-action-param="rotateZInverse">
+			{{ ux_icon('fluent-mdl2:rotate-90-counter-clockwise', {class: 'icon'}) }}
+		</button>
+
+	</div>
+		<button class="shake" data-action="live#action" data-live-action-param="shake">
+			{{ ux_icon('mix', {class: 'icon'}) }}
+			Mix
+		</button>
+</div>

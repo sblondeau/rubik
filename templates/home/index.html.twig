@@ -1,8 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Hello HomeController!
+{% endblock %}
 
 {% block body %}
-<h1>Sorter</h1>
-<twig:Table :entity="entity" :headers="headers" :searchFields="searchFields" />
+	<div class="surface surface-top-left"></div>
+	<div class="surface surface-top"></div>
+	<div class="surface surface-top-right"></div>
+	<div class="surface surface-left"></div>
+	<div class="surface surface-center">
+		<twig:Cube :cube="cube"/>
+	</div>
+	<div class="surface surface-right"></div>
+	<div class="surface surface-bottom-left"></div>
+	<div class="surface surface-bottom"></div>
+	<div class="surface surface-bottom-right"></div>
+
 {% endblock %}
