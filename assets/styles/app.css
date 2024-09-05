@@ -1,5 +1,5 @@
 :root {
-    --tile-size: 100px;
+    --tile-size: clamp(50px, 18vw, 100px);
 }
 
 * {
@@ -11,9 +11,10 @@ body {
     --cube-y: 0;
     --cube-z: 0;
     margin: 0;
-    padding: 0;
+    padding: 1rem;
     height: 100vh;
     width: 100%;
+
     &:hover {
         .cube {
             transition: 0;
@@ -22,8 +23,26 @@ body {
 
 }
 
+nav {
+    .title {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
 
-.cube:has(~ .buttons button:is(.animX,.animXInv, .animY, .animYInv, .animZ, .animZInv)) {
+    .logo {
+        width: 50px;
+        aspect-ratio: 1;
+    }
+}
+
+.alert {
+    padding: 0.5rem;
+    border-radius: 8px;
+    background-color: rgba(63, 98, 158, 0.5);
+    width: fit-content;
+}
+
+.cube:has(~ .buttons button:is(.animX, .animXInv, .animY, .animYInv, .animZ, .animZInv)) {
     transition: 1s;
     transform-style: preserve-3d;
     transform-origin: center center calc(var(--tile-size) * -1.5);
@@ -33,6 +52,7 @@ body {
     --cube-x: 90deg;
     --cube-y: 0;
 }
+
 .cube:has(~ .buttons .animXInv) {
     --cube-x: -90deg;
     --cube-y: 0;
@@ -42,6 +62,7 @@ body {
     --cube-x: 0;
     --cube-y: 90deg;
 }
+
 .cube:has(~ .buttons .animYInv) {
     --cube-x: 0;
     --cube-y: -90deg;
@@ -50,6 +71,7 @@ body {
 .cube:has(~ .buttons .animZ) {
     --cube-z: 90deg;
 }
+
 .cube:has(~ .buttons .animZInv) {
     --cube-z: -90deg;
 }
@@ -59,7 +81,7 @@ body {
     display: grid;
     perspective: 1000px;
     transform-style: preserve-3d;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, calc((70vh) / 3));
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
         "topleft top topright"
@@ -67,7 +89,6 @@ body {
         "bottomleft bottom bottomright"
     ;
     padding: 1rem;
-    height: 100%;
 }
 
 
@@ -105,7 +126,6 @@ button {
 
     .buttons {
         --button-distance: var(--tile-size);
-        height: 100%;
         display: grid;
         width: calc(var(--tile-size) * 3);
         height: calc(var(--tile-size) * 3);
@@ -146,11 +166,7 @@ button {
     }
 }
 
-.shake {
-    position: fixed;
-    top: 100%;
-    right: 200%;
-}
+
 
 .cube {
     transform: rotateX(var(--cube-x)) rotateY(var(--cube-y)) rotateZ(var(--cube-z));
@@ -161,15 +177,18 @@ button {
     margin: auto;
     width: fit-content;
 
+
 }
 
+.mix {
+    position: absolute;
+    top: calc(var(--tile-size) * -1);
+    right: calc(var(--tile-size) * -1);
+}
 
 /** Surfaces */
 .surface {
     width: 100%;
-    height: 100%;
-
-
 
     .surface-left {
         grid-area: left;
@@ -209,11 +228,12 @@ button {
 }
 
 body {
-    --angle:20deg;
+    --angle: 20deg;
 
-      
+
     &:has(.surface-left:hover) {
-        --cube-y: calc(var(--angle) * -1);;
+        --cube-y: calc(var(--angle) * -1);
+        ;
     }
 
     &:has(.surface-right:hover) {
@@ -222,7 +242,8 @@ body {
 
     &:has(.surface-top-left:hover) {
         --cube-x: var(--angle);
-        --cube-y: calc(var(--angle) * -1);;
+        --cube-y: calc(var(--angle) * -1);
+        ;
     }
 
     &:has(.surface-top-right:hover) {
@@ -235,16 +256,20 @@ body {
     }
 
     &:has(.surface-bottom:hover) {
-        --cube-x: calc(var(--angle) * -1);;
+        --cube-x: calc(var(--angle) * -1);
+        ;
     }
 
     &:has(.surface-bottom-left:hover) {
-        --cube-x: calc(var(--angle) * -1);;
-        --cube-y: calc(var(--angle) * -1);;
+        --cube-x: calc(var(--angle) * -1);
+        ;
+        --cube-y: calc(var(--angle) * -1);
+        ;
     }
 
     &:has(.surface-bottom-right:hover) {
-        --cube-x: calc(var(--angle) * -1);;
+        --cube-x: calc(var(--angle) * -1);
+        ;
         --cube-y: var(--angle);
     }
 

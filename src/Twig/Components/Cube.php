@@ -34,7 +34,6 @@ final class Cube
    
     private function rotate(string $direction)
     {
-        sleep(1);
         match($direction) {
             'x' => $this->cube->rotateX(),
             'xInverse' => $this->cube->rotateXInverse(),
@@ -43,6 +42,7 @@ final class Cube
             'z' => $this->cube->rotateZ(),
             'zInverse' => $this->cube->rotateZInverse(),
         };
+        sleep(1);
         
     }
     

@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-     	<title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>
 			{% block title %}Welcome!
 			{% endblock %}
 		</title>
@@ -19,9 +19,31 @@
 		{% endblock %}
 	</head>
 	<body>
-	<h1>Rubik</h1>
-	<div class="container">
-		{% block body %}{% endblock %}
-	</div>
-	</body>
-</html>
+		<nav>
+			<ul>
+				<li>
+					<span class="title">Rubik's cube</span><br> By Sylvain Blondeau
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<twig:ux:icon name="uil:github" width="50"/>
+					<a target="_blank" href="https://github.com/sblondeau/rubik"></a>
+				</li>
+				<li>
+					<twig:ux:icon name="uil:linkedin" width="50"/>
+					<a target="_blank" href="https://www.linkedin.com/in/sylvain-blondeau"></a>
+				</li>
+				<li>
+					<a target="_blank" href="https://sylvainblondeau.dev">
+						<img class="logo" src="{{ asset('images/sb.png') }}"></a>
+				</li>
+			</ul>
+		</nav>
+		<h1>
+		</h1>
+		<div class="alert">Symfony and Symfony UX Experimentations to create an online Rubik's cube. Click on <twig:ux:icon name="mix" width="50"/> Mix button to start</div>
+		<div class="container"> {% block body %}{% endblock %}
+			</div>
+		</body>
+	</html>
