@@ -7,6 +7,7 @@
 }
 
 body {
+    --duration: 0.25s;
     --cube-x: 0;
     --cube-y: 0;
     --cube-z: 0;
@@ -43,7 +44,7 @@ nav {
 }
 
 .cube:has(~ .buttons button:is(.animX, .animXInv, .animY, .animYInv, .animZ, .animZInv)) {
-    transition: 1s;
+    transition: var(--duration);
     transform-style: preserve-3d;
     transform-origin: center center calc(var(--tile-size) * -1.5);
 }
@@ -352,7 +353,7 @@ body {
 /** Turn Buttons **/
 .cube:has(button.animTurn) .tile,
 .cube:has(button.animTurn) .face {
-    transition: 1s;
+    transition: var(--duration);
 }
 
 .cube:has(button.turnFrontToRight) .face-front {
@@ -371,6 +372,7 @@ body {
     }
 
     &:has(.turnTopToRight, .turnTopToLeft) {
+
         .face-front,
         .face-right,
         .face-left {
@@ -420,38 +422,39 @@ body {
         .face-top {
             .tile:is(:nth-child(3)) {
                 transform: rotateX(var(--rotate));
-                transform-origin:center calc(var(--tile-size) * 1.5)  calc(var(--tile-size) * -1.5);
+                transform-origin: center calc(var(--tile-size) * 1.5) calc(var(--tile-size) * -1.5);
             }
 
             .tile:is(:nth-child(6)) {
                 transform: rotateX(var(--rotate));
-                transform-origin:center calc(var(--tile-size) * 0.5)  calc(var(--tile-size) * -1.5);
+                transform-origin: center calc(var(--tile-size) * 0.5) calc(var(--tile-size) * -1.5);
             }
 
             .tile:is(:nth-child(9)) {
                 transform: rotateX(var(--rotate));
-                transform-origin:center calc(var(--tile-size) * -0.5)  calc(var(--tile-size) * -1.5);
+                transform-origin: center calc(var(--tile-size) * -0.5) calc(var(--tile-size) * -1.5);
             }
         }
     }
 
     &:has(.turnLeftToTop, .turnLeftToBottom) {
+
         .face-front,
         .face-bottom,
         .face-top {
             .tile:is(:nth-child(1)) {
                 transform: rotateX(var(--rotate));
-                transform-origin:center calc(var(--tile-size) * 1.5)  calc(var(--tile-size) * -1.5);
+                transform-origin: center calc(var(--tile-size) * 1.5) calc(var(--tile-size) * -1.5);
             }
 
             .tile:is(:nth-child(4)) {
                 transform: rotateX(var(--rotate));
-                transform-origin:center calc(var(--tile-size) * 0.5)  calc(var(--tile-size) * -1.5);
+                transform-origin: center calc(var(--tile-size) * 0.5) calc(var(--tile-size) * -1.5);
             }
 
             .tile:is(:nth-child(7)) {
                 transform: rotateX(var(--rotate));
-                transform-origin:center calc(var(--tile-size) * -0.5)  calc(var(--tile-size) * -1.5);
+                transform-origin: center calc(var(--tile-size) * -0.5) calc(var(--tile-size) * -1.5);
             }
         }
     }

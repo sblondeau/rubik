@@ -15,7 +15,9 @@ final class Cube
 {
     use DefaultActionTrait;
     use ComponentToolsTrait;
-    
+ 
+    const DURATION = 250000;
+
     #[LiveProp(fieldName: 'data', writable:true, useSerializerForHydration:true)]
     public DtoCube $cube;
    
@@ -42,7 +44,7 @@ final class Cube
             'z' => $this->cube->rotateZ(),
             'zInverse' => $this->cube->rotateZInverse(),
         };
-        sleep(1);
+        usleep(self::DURATION);
         
     }
     
@@ -137,6 +139,6 @@ final class Cube
             'leftToBottom' => $this->cube->turnLeftToBottom(),
         };
 
-        sleep(1);        
+        usleep(self::DURATION);        
     }
 }
