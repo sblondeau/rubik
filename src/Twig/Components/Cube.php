@@ -80,7 +80,49 @@ final class Cube
     }
 
     #[LiveAction]
-    public function turn (#[LiveArg()] string $direction)
+    public function turnFrontToRight() {
+        $this->turn('frontToRight');
+    }
+
+    #[LiveAction]
+    public function turnFrontToLeft() {
+        $this->turn('frontToLeft');
+    }
+    #[LiveAction]
+    public function turnTopToRight() {
+        $this->turn('topToRight');
+   }
+
+    #[LiveAction]
+    public function turnTopToLeft() {
+        $this->turn('topToLeft');
+    }
+    #[LiveAction]
+    public function turnBottomToRight() {
+        $this->turn('bottomToRight');
+    }
+    #[LiveAction]
+    public function turnBottomToLeft() {
+        $this->turn('bottomToLeft');
+    }
+    #[LiveAction]
+    public function turnRightToTop() {
+        $this->turn('rightToTop');
+    }
+    #[LiveAction]
+    public function turnRightToBottom() {
+        $this->turn('rightToBottom');
+    }
+    #[LiveAction]
+    public function turnLeftToTop() {
+        $this->turn('leftToTop');
+    }
+    #[LiveAction]
+    public function turnLeftToBottom() {
+        $this->turn('leftToBottom');
+    }
+
+    private function turn (string $direction)
     {
         match($direction) {
             'frontToRight' => $this->cube->turnFrontToRight(),
@@ -94,6 +136,7 @@ final class Cube
             'leftToTop' => $this->cube->turnLeftToTop(),
             'leftToBottom' => $this->cube->turnLeftToBottom(),
         };
-        
+
+        sleep(1);        
     }
 }

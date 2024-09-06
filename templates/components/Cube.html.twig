@@ -3,34 +3,34 @@
 		{% for face in cube.faces %}
 			<twig:Face face="{{face}}"/>
 		{% endfor %}
-		<button data-action="live#action" data-live-action-param="turn" data-live-direction-param="frontToRight">
+		<button data-action="live#action" data-loading="action(turnFrontToRight)|addClass(animTurn turnFrontToRight)" data-live-action-param="turnFrontToRight" class="frontToRightButton">
 			{{ ux_icon('front-to-right', {class: 'icon'}) }}
 		</button>
-		<button data-action="live#action" data-live-action-param="turn" data-live-direction-param="frontToLeft">
+		<button data-action="live#action" data-loading="action(turnFrontToLeft)|addClass(animTurn turnFrontToLeft)" data-live-action-param="turnFrontToLeft" class="frontToLeftButton">
 			{{ ux_icon('front-to-left', {class: 'icon'}) }}
 		</button>
-		<button data-action="live#action" data-live-action-param="turn" data-live-direction-param="topToRight">
+		<button data-action="live#action" data-loading="action(turnTopToRight)|addClass(animTurn turnTopToRight)" data-live-action-param="turnTopToRight" class="topToRightButton">
 			{{ ux_icon('top-to-right', {class: 'icon'}) }}
 		</button>
-		<button data-action="live#action" data-live-action-param="turn" data-live-direction-param="topToLeft">
+		<button data-action="live#action" data-loading="action(turnTopToLeft)|addClass(animTurn turnTopToLeft)" data-live-action-param="turnTopToLeft" class="topToLeftButton">
 			{{ ux_icon('top-to-left', {class: 'icon'}) }}
 		</button>
-		<button data-action="live#action" data-live-action-param="turn" data-live-direction-param="bottomToRight">
+		<button data-action="live#action" data-loading="action(turnBottomToRight)|addClass(animTurn turnBottomToRight)" data-live-action-param="turnBottomToRight" class="bottomToRightButton">
 			{{ ux_icon('bottom-to-right', {class: 'icon'}) }}
 		</button>
-		<button data-action="live#action" data-live-action-param="turn" data-live-direction-param="bottomToLeft">
+		<button data-action="live#action" data-loading="action(turnBottomToLeft)|addClass(animTurn turnBottomToLeft)" data-live-action-param="turnBottomToLeft" class="bottomToLeftButton">
 			{{ ux_icon('bottom-to-left', {class: 'icon'}) }}
 		</button>
-		<button data-action="live#action" data-live-action-param="turn" data-live-direction-param="rightToTop">
+		<button data-action="live#action" data-loading="action(turnRightToTop)|addClass(animTurn turnRightToTop)" data-live-action-param="turnRightToTop" class="rightToTopButton">
 			{{ ux_icon('right-to-top', {class: 'icon'}) }}
 		</button>
-		<button data-action="live#action" data-live-action-param="turn" data-live-direction-param="rightToBottom">
+		<button data-action="live#action" data-loading="action(turnRightToBottom)|addClass(animTurn turnRightToBottom)" data-live-action-param="turnRightToBottom" class="rightToBottomButton">
 			{{ ux_icon('right-to-bottom', {class: 'icon'}) }}
 		</button>
-		<button data-action="live#action" data-live-action-param="turn" data-live-direction-param="leftToTop">
+		<button data-action="live#action" data-loading="action(turnLeftToTop)|addClass(animTurn turnLeftToTop)" data-live-action-param="turnLeftToTop" class="leftToTopButton">
 			{{ ux_icon('left-to-top', {class: 'icon'}) }}
 		</button>
-		<button data-action="live#action" data-live-action-param="turn" data-live-direction-param="leftToBottom">
+		<button data-action="live#action" data-loading="action(turnLeftToBottom)|addClass(animTurn turnLeftToBottom)" data-live-action-param="turnLeftToBottom" class="leftToBottomButton">
 			{{ ux_icon('left-to-bottom', {class: 'icon'}) }}
 		</button>
 	</div>
@@ -57,8 +57,8 @@
 		</button>
 
 	</div>
-		<button class="mix" data-action="live#action" data-live-action-param="shake">
-			{{ ux_icon('mix', {class: 'icon'}) }}
-			Mix
-		</button>
+	<button class="mix" data-action="live#action" data-live-action-param="shake">
+		{{ ux_icon('mix', {class: 'icon'}) }}
+		Mix
+	</button>
 </div>
